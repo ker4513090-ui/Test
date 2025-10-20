@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>已复制内容</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f5f5f5;
+    }
+    .box {
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: white;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .copied {
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🎉 内容已复制！</h2>
+    <p id="copiedText">ABCD-1234-EFGH</p>
+    <p class="copied">请粘贴使用（长按 → 粘贴）</p>
+  </div>
+
+  <script>
+    const content = "ABCD-1234-EFGH";
+    navigator.clipboard.writeText(content).then(() => {
+      console.log("复制成功");
+    }).catch(() => {
+      alert("⚠️ 自动复制失败，请手动复制");
+    });
+  </script>
+</body>
+</html>
